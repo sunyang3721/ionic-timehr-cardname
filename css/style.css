@@ -1,0 +1,9 @@
+a{text-decoration: none;}
+.content_padding_top{
+	padding-top: 52px; 
+}
+.content_padding_top .card .item{
+	background-image: url('../lib/img/bg.png');
+	background-repeat:no-repeat;
+	background-position:10px 50px;
+}
