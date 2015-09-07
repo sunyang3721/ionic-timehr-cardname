@@ -1,9 +1,20 @@
 a{text-decoration: none;}
 .content_padding_top{
-	padding-top: 52px; 
+	padding-top: 44px; 
 }
+.card{margin:10px 10px;}
 .content_padding_top .card .item{
 	background-image: url('../lib/img/bg.png');
 	background-repeat:no-repeat;
-	background-position:10px 50px;
+	background-position:0px 0px;
+	text-align:center;
+}
+#avater{
+	border:5px solid rgba(255, 0, 0, 0.52);
+	-moz-border-radius: 100px;      /* Gecko browsers */
+    -webkit-border-radius: 100px;   /* Webkit browsers */
+    border-radius:100px;            /* W3C syntax */
+}
+.content_padding_top .list .item .moeny{
+	color:red;
 }
