@@ -16,5 +16,7 @@ a{text-decoration: none;}
     border-radius:100px;            /* W3C syntax */
 }
 .content_padding_top .list .item .moeny{
-	color:red;
+	color:#ff7f00;
 }
+
+.moeny-text{color:#ff7f00;font-weight: bold;}

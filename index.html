@@ -1,4 +1,4 @@
-<html ng-app="kuwuya">
+<html ng-app="timehr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
@@ -21,106 +21,114 @@
     <link href="./css/style.css" rel="stylesheet">
   </head>
   <body>
-  <div class="bar bar-header bar-assertive">
-    <h1 class="title">腾驹达猎头顾问</h1>
-  </div>
-  <div class="content_padding_top">
-    <div class="card">
-      <div class="item item-text-wrap">
-      <img src="./lib/img/icon/ios/icon-152.png" id="avater" />
-      </div>
-    </div>
-    <ul class="list">
-      <li class="item item-divider">
-        猎头信息
-      </li>
-      <li class="item">
-         <h2>英文名字 : sunyang</h2>
-      </li>
-      <li class="item">
-         <h2>团队名称 : 猎鹰队</h2>
-      </li>
-      <li class="item">
-         <h2>QQ 号码  : 274507284</h2>
-      </li>
-      <li class="item">
-         <h2 style="white-space:normal;">擅长行业 : 房地产开发,总监级,副总监,总经理案例成功,测试</h2>
-      </li>
-      <li class="item">
-         <h2 style="text-align:center">
-          <img src="./lib/img/icon/ios/icon-152.png" />
-          <p>微信二维码扫一扫</p>
-         </h2>
-      </li>
-      <li class="item item-divider">
-        职位信息
-      </li>
-      <li class="item item-icon-right">
-        <a href="#">
-         <div class="row">
-           <div class="col col-75">
-             <h2>技术总监</h2>
-             <p>北京某处技术有限公司</p>
-           </div>
-           <div class="col">
-             <b class="moeny">50~80万</b>
-           </div>
-         </div>
-        </a>
-         <i class="icon ion-ios-arrow-right"></i>
-      </li>
-      <li class="item item-icon-right">
-        <a href="#">
-         <div class="row">
-           <div class="col col-75">
-             <h2>技术总监</h2>
-             <p>北京某处技术有限公司</p>
-           </div>
-           <div class="col">
-             <b class="moeny">50~80万</b>
-           </div>
-         </div>
-        </a>
-         <i class="icon ion-ios-arrow-right"></i>
-      </li>
-      <li class="item item-icon-right">
-        <a href="#">
-         <div class="row">
-           <div class="col col-75">
-             <h2>技术总监</h2>
-             <p>北京某处技术有限公司</p>
-           </div>
-           <div class="col">
-             <b class="moeny">50~80万</b>
-           </div>
-         </div>
-        </a>
-         <i class="icon ion-ios-arrow-right"></i>
-      </li>
-      <li class="item item-icon-right">
-        <a href="#">
-         <div class="row">
-           <div class="col col-75">
-             <h2>技术总监</h2>
-             <p>北京某处技术有限公司</p>
-           </div>
-           <div class="col">
-             <b class="moeny">50~80万</b>
-           </div>
-         </div>
-        </a>
-         <i class="icon ion-ios-arrow-right"></i>
-      </li>
-      <li class="item item-divider">
-        关于腾驹达公司
-      </li>
-      <li class="item" style="white-space:normal;">
-        <span>sfd afda f范德萨发达发达发达发达发达发达发对对对对对对</span>
-      </li>
-    </ul>
-
-  </div>
-  <!-- your app's js -->
+    <ion-nav-view></ion-nav-view>
+    <script id="home.html" type="text/ng-template">
+      <ion-content>
+        <div class="bar bar-header bar-assertive">
+          <h1 class="title">腾驹达猎头顾问</h1>
+        </div>
+        <div class="content_padding_top">
+          <div class="card">
+            <div class="item item-text-wrap">
+            <img src="./lib/img/icon/ios/{{user_img.id}}.png" id="avater" />
+            </div>
+          </div>
+          <ul class="list">
+            <li class="item item-divider">
+              猎头信息
+            </li>
+            <li class="item">
+               <h2>英文名字 : {{user.en_name}}</h2>
+            </li>
+            <li class="item">
+               <h2>团队名称 : {{user.tuandui}}</h2>
+            </li>
+            <li class="item">
+               <h2>QQ 号码  : {{user.qq}}</h2>
+            </li>
+            <li class="item">
+               <h2 style="white-space:normal;">擅长行业 : {{user.hangye}}</h2>
+            </li>
+            <li class="item">
+               <h2 style="text-align:center">
+                <img src="./lib/img/icon/ios/{{user_img.user_img}}" />
+                <p>微信二维码扫一扫</p>
+               </h2>
+            </li>
+            <li class="item item-divider">
+              职位信息
+            </li>
+            <li class="item item-icon-right" ng-repeat="key in datas">
+              <a href="#/joblist/{{key.id}}">
+               <div class="row">
+                 <div class="col col-75" ui-sref="joblist">
+                   <h2>{{key.jobtitle}}</h2>
+                   <p>{{key.gongsi}}</p>
+                 </div>
+                 <div class="col">
+                   <b class="moeny">{{key.moeny}}</b>
+                 </div>
+               </div>
+              </a>
+               <i class="icon ion-ios-arrow-right"></i>
+            </li>
+            <li class="item item-divider">
+              关于腾驹达公司
+            </li>
+            <li class="item" style="white-space:normal;">
+              <span>sfd afda f范德萨发达发达发达发达发达发达发对对对对对对</span>
+            </li>
+          </ul>
+        </div>
+      </ion-content>
+    </script>
+    <script id="joblist.html" type="text/ng-template">
+      <ion-content ng-controller="joblistCtrl">
+        <div class="bar bar-header bar-assertive">
+          <h1 class="title">职位信息</h1>
+        </div>
+        <div class="content_padding_top">
+          <div class="card">
+            <div class="item">
+              <h2>{{job_show.jobtitle}}</h2>
+            </div>
+          </div>
+          <ul class="list list-inset" style="margin-top:12px;">
+            <li class="item">
+              <p>年薪范围：<span class="moeny-text">20-50万</span></p>
+            </li>
+            <li class="item">
+              <p>公司地点：北京某某知名房地产公司</p>
+            </li>
+            <li class="item">
+              <p style="white-space:normal;">职位要求或描述<br/>北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司</p>
+            </li>
+          </ul>
+          <ul class="list">
+            <li class="item item-divider">人才填表名单</li>
+            <label class="item item-input">
+              <input type="text" placeholder="您的人才姓名(必填)">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="移动手机(必填)">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="QQ号码">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="邮箱E-mail">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="其它留言">
+            </label>
+            <li class="item"><button class="button button-positive button-block">确定提交</button></li>
+          </ul>
+        </div>
+      </ion-content>
+    </script>
+  <!-- your apps js -->
   <script src="./js/app.js"></script>
+  <script src="./js/controllers/JobCtrl.js"></script>
+  <script src="./js/server/homeServer.js"></script>
   </body>
 </html>
