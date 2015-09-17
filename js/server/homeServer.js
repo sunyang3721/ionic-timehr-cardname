@@ -47,8 +47,8 @@ homeApp.factory('jobFactory',function ($rootScope,$timeout,$ionicLoading,$ionicP
 		},
 		job_showFactory:function(id) {
 			jobService.job_show(id).success(function (data,status,config) {
-				$rootScope.job_show = data;
-				console.log(data);
+				$rootScope.jobdata = data;
+				//console.log(data);
 			}).error(function () {
 				//错误代码
 			})

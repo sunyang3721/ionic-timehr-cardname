@@ -52,7 +52,7 @@
             <li class="item">
                <h2 style="text-align:center">
                 <img src="./lib/img/icon/ios/{{user_img.user_img}}" />
-                <p>微信二维码扫一扫</p>
+                <p>长按二维码加微信好友</p>
                </h2>
             </li>
             <li class="item item-divider">
@@ -61,9 +61,9 @@
             <li class="item item-icon-right" ng-repeat="key in datas">
               <a href="#/joblist/{{key.id}}">
                <div class="row">
-                 <div class="col col-75" ui-sref="joblist">
+                 <div class="col col-75">
                    <h2>{{key.jobtitle}}</h2>
-                   <p>{{key.gongsi}}</p>
+                   <p>{{key.gongsi}}{{key.id}}</p>
                  </div>
                  <div class="col">
                    <b class="moeny">{{key.moeny}}</b>
@@ -83,14 +83,14 @@
       </ion-content>
     </script>
     <script id="joblist.html" type="text/ng-template">
-      <ion-content ng-controller="joblistCtrl">
+      <ion-content>
         <div class="bar bar-header bar-assertive">
           <h1 class="title">职位信息</h1>
         </div>
         <div class="content_padding_top">
           <div class="card">
             <div class="item">
-              <h2>{{job_show.jobtitle}}</h2>
+              <h2>{{jobdata.jobtitle}}</h2>
             </div>
           </div>
           <ul class="list list-inset" style="margin-top:12px;">
