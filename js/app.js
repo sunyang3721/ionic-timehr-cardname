@@ -27,7 +27,6 @@ angular.module('timehr', ['ionic','timehr.JobCtrl'])
       templateUrl: "joblist.html"
     })
     
-  
 // $urlRouterProvider.otherwise("/jobs/home");
 });
 

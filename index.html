@@ -20,6 +20,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/ionic/1.0.1/css/ionic.min.css">
     <link href="./css/style.css" rel="stylesheet">
   </head>
+<style type="text/css">
+/*
+  form .ng-invalid-require.ng-dirty{background-color: red;}
+  form .ng-invalid-email.ng-dirty{background-color: lightgoldenrodyellow;}
+  form .ng-invalid.ng-dirty{ background-color: lightpink;}
+  form .ng-valid.ng-dirty{background-color: lightgreen;}
+  div.error{color:red;font-weight: bold;}
+  */
+</style>
   <body>
     <ion-nav-view></ion-nav-view>
     <script id="home.html" type="text/ng-template">
@@ -102,28 +111,75 @@
               <p>公司地点：{{jobdata.gongsi}}</p>
             </li>
             <li class="item">
-              <p style="white-space:normal;">职位要求或描述<br/>{{jobdata.jobcontent}}</p>
+              <p style="white-space:normal;">职位要求或描述<br/>{{jobdata.jobcontent}}{{formdata.name}}</p>
             </li>
           </ul>
-          <ul class="list">
-            <li class="item item-divider">人才填表名单</li>
-            <label class="item item-input">
-              <input type="text" placeholder="您的人才姓名(必填)">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="移动手机(必填)">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="QQ号码">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="邮箱E-mail">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="其它留言">
-            </label>
-            <li class="item"><button class="button button-positive button-block">确定提交</button></li>
-          </ul>
+          <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl">
+            <ul class="list">
+              <li class="item item-divider">人才填表名单</li>
+              <label class="item item-input">
+                <input type="text" placeholder="您的人才姓名(必填)" name="name" required ng-model="newUser.name">
+              </label>
+              <label class="item item-input">
+                <input type="number" placeholder="移动手机(必填)" name="ihone" required ng-model="newUser.ihone">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="QQ号码" name="qq"  ng-model="newUser.qq">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="邮箱E-mail" name="userEmail" ng-model="newUser.userEmail">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="其它留言" name="wangzhi" ng-model="newUser.wangzhi">
+              </label>
+              <li class="item"><button type="submit" ng-disabled="userForm.$invalid" class="button button-positive button-block">确定提交</button></li>
+            </ul>
+          </form>
+        <!--
+          <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl">
+            <ul class="list">
+              <li class="item item-divider">人才填表名单</li>
+              <label class="item item-input">
+                <input type="text" placeholder="您的人才姓名(必填)" name="name" required ng-model="newUser.name">
+              </label>
+              <div class="error" ng-show="userForm.name.$invalid && userForm.name.$dirty">
+                   {{getError(userForm.name.$error)}}
+              </div>
+              <label class="item item-input">
+                <input type="number" placeholder="移动手机(必填)" name="ihone" required ng-model="newUser.ihone">
+              </label>
+              <div class="error" ng-show="userForm.ihone.$invalid && userForm.ihone.$dirty">
+                   {{getError(userForm.ihone.$error)}}
+              </div>
+              <label class="item item-input">
+                <input type="number" placeholder="QQ号码" name="qq"  ng-model="newUser.qq">
+              </label>
+              <div class="error" ng-show="userForm.qq.$invalid && userForm.qq.$dirty">
+                   {{getError(userForm.qq.$error)}}
+              </div>
+              <label class="item item-input">
+                <input type="email" placeholder="邮箱E-mail" name="userEmail" ng-model="newUser.userEmail" required>
+              </label>
+              <div class="error" ng-show="userForm.userEmail.$invalid && userForm.userEmail.$dirty">
+                   {{getError(userForm.userEmail.$error)}}
+                  
+              </div>
+              <label class="item item-input">
+                <input type="url" placeholder="http://xxxx" name="wangzhi" ng-model="newUser.wangzhi">
+              </label>
+              <div class="error" ng-show="userForm.wangzhi.$invalid && userForm.wangzhi.$dirty">
+                   {{getError(userForm.wangzhi.$error)}}
+              </div>
+              <b>{{message}}<hr/>
+                valid:
+                <span class="summary" ng-class="userForm.$valid ? 'ng-valid' : 'ng-invalid'">
+                  {{userForm.$valid}}
+                </span>
+              </b>
+              <li class="item"><button type="submit" ng-disabled="userForm.$invalid" class="button button-positive button-block">确定提交</button></li>
+            </ul>
+          </form>
+          -->
         </div>
       </ion-content>
     </script>
