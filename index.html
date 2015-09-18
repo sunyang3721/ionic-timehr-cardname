@@ -25,7 +25,7 @@
     <script id="home.html" type="text/ng-template">
       <ion-content>
         <div class="bar bar-header bar-assertive">
-          <h1 class="title">腾驹达猎头顾问</h1>
+          <h1 class="title">腾驹达猎头招聘</h1>
         </div>
         <div class="content_padding_top">
           <div class="card">
@@ -85,6 +85,7 @@
     <script id="joblist.html" type="text/ng-template">
       <ion-content>
         <div class="bar bar-header bar-assertive">
+          <a href="#/home/{{jobdata.pid}}" class="button icon ion-ios-arrow-back"> 返回</a>
           <h1 class="title">职位信息</h1>
         </div>
         <div class="content_padding_top">
@@ -95,13 +96,13 @@
           </div>
           <ul class="list list-inset" style="margin-top:12px;">
             <li class="item">
-              <p>年薪范围：<span class="moeny-text">20-50万</span></p>
+              <p>年薪范围：<span class="moeny-text">{{jobdata.moeny}}</span></p>
             </li>
             <li class="item">
-              <p>公司地点：北京某某知名房地产公司</p>
+              <p>公司地点：{{jobdata.gongsi}}</p>
             </li>
             <li class="item">
-              <p style="white-space:normal;">职位要求或描述<br/>北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司北京某某知名房地产公司</p>
+              <p style="white-space:normal;">职位要求或描述<br/>{{jobdata.jobcontent}}</p>
             </li>
           </ul>
           <ul class="list">

@@ -9,6 +9,6 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 .controller('joblistCtrl', function($stateParams,jobFactory) {
   //console.log($location);
 
-  console.log($stateParams.id);
+  //console.log($stateParams.id);
   jobFactory.job_showFactory($stateParams.id);
 });

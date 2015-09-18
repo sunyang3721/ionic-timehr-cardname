@@ -1,6 +1,6 @@
 var homeApp = angular.module('timehr.homeServer', []);
 
-homeApp.constant("dataURL",'http://192.168.7.157/sunyang/test.php/Weixin');  //定义常量
+homeApp.constant("dataURL",'http://192.168.7.157/sunyang/test.php/Weixinajax');  //定义常量
 
 homeApp.factory('jobFactory',function ($rootScope,$timeout,$ionicLoading,$ionicPopup,jobService) {
 	return{
