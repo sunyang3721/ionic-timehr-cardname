@@ -1,5 +1,5 @@
 angular.module('timehr', ['ionic','timehr.JobCtrl'])
-.config(function($ionicConfigProvider) {
+.config(function($ionicConfigProvider,$httpProvider) {
   $ionicConfigProvider.platform.ios.tabs.style('standard'); 
   $ionicConfigProvider.platform.ios.tabs.position('bottom');
   $ionicConfigProvider.platform.android.tabs.style('standard');
@@ -13,6 +13,17 @@ angular.module('timehr', ['ionic','timehr.JobCtrl'])
 
   $ionicConfigProvider.platform.ios.views.transition('ios'); 
   $ionicConfigProvider.platform.android.views.transition('android');
+   $httpProvider.defaults.transformRequest = function(obj){
+     var str = [];
+     for(var p in obj){
+       str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+     }
+     return str.join("&");
+   }
+
+   $httpProvider.defaults.headers.post = {
+        'Content-Type': 'application/x-www-form-urlencoded'
+   }
 })
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

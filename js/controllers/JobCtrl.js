@@ -11,15 +11,28 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
   //console.log($stateParams.id);
   jobFactory.job_showFactory($stateParams.id);
 })
-.controller('formCtrl', function ($scope) {
+.controller('formCtrl', function ($scope,$http) {
 	$scope.submitForm = function (userDetails) {
 		//ng-model中的属性 获取  不是从name获取
-		$scope.message = userDetails.name 
-		+ userDetails.ihone 
-		+ userDetails.qq 
-		+ userDetails.userEmail 
-		+ userDetails.wangzhi;
+		$name = userDetails.name;
+		$ihone = userDetails.ihone;
+		$qq = userDetails.qq;
+		$userEmail = userDetails.userEmail;
+		$wangzhi = userDetails.wangzhi;
+		//console.log($name);
+		$http({
+			method:'post',
+			url:'http://192.168.7.157/sunyang/test.php/Weixinajax/userPost',
+			data:{name:$name,ihone:$ihone}
+		}).success(function (req) {
+			console.log(req);
+		}).error(function () {
+			//错误信息
+		})
 	}
+
+
+
 	/* 错误提示文字  学习用
 	$scope.getError = function (error) {
 		if(angular.isDefined(error)) {
