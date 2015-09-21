@@ -108,15 +108,16 @@
               <p>年薪范围：<span class="moeny-text">{{jobdata.moeny}}</span></p>
             </li>
             <li class="item">
-              <p>公司地点：{{jobdata.gongsi}}</p>
+              <p>公司地点：{{jobdata.gongsi}}{{userPid}}</p>
             </li>
             <li class="item">
               <p style="white-space:normal;">职位要求或描述<br/>{{jobdata.jobcontent}}{{formdata.name}}</p>
             </li>
           </ul>
           <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl">
+            <input type="hidden" value="" name="pid" ng-model="newUser.pid">
             <ul class="list">
-              <li class="item item-divider">人才填表名单</li>
+              <li class="item item-divider">人才填表名单 <span class="balanced">{{info}}</span></li>
               <label class="item item-input">
                 <input type="text" placeholder="您的人才姓名(必填)" name="name" required ng-model="newUser.name">
               </label>
