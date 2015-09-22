@@ -111,11 +111,14 @@
               <p>公司地点：{{jobdata.gongsi}}{{userPid}}</p>
             </li>
             <li class="item">
-              <p style="white-space:normal;">职位要求或描述<br/>{{jobdata.jobcontent}}{{formdata.name}}</p>
+              <p style="margin-bottom:10px;">职位要求或描述</p>
+
+              <pre>{{jobdata.jobcontent}}</pre>
             </li>
           </ul>
           <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl">
             <input type="hidden" value="" name="pid" ng-model="newUser.pid">
+            <input type="hidden" value="" name="jobname" ng-model="newUser.jobname">
             <ul class="list">
               <li class="item item-divider">人才填表名单 <span class="balanced">{{info}}</span></li>
               <label class="item item-input">

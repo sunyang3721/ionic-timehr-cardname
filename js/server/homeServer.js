@@ -46,7 +46,7 @@ homeApp.factory('jobFactory',function ($rootScope,$timeout,$ionicLoading,$ionicP
 		job_showFactory:function(id) {
 			jobService.job_show(id).success(function (data,status,config) {
 				$rootScope.jobdata = data;
-				$rootScope.newUser = {'pid':data['pid']};
+				$rootScope.newUser = {'pid':data['pid'],'jobname':data['jobtitle']};
 				//console.log(data);
 			}).error(function () {
 				//错误代码

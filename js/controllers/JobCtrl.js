@@ -20,6 +20,7 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 		$qq = userDetails.qq;
 		$userEmail = userDetails.userEmail;
 		$wangzhi = userDetails.wangzhi;
+		$jobname = userDetails.jobname;
 		//console.log($name);
 		$ionicLoading.show({
 					template: "正在载入数据，请稍后...",
@@ -28,7 +29,7 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 		$http({
 			method:'post',
 			url:'http://192.168.7.157/sunyang/test.php/Weixinajax/userPost',
-			data:{name:$name,ihone:$ihone,pid:$pid}
+			data:{pid:$pid,name:$name,ihone:$ihone,qq:$qq,userEmail:$userEmail,wangzhi:$wangzhi,jobname:$jobname}
 		}).success(function (req) {
 			console.log(req);
 			$ionicLoading.hide();
@@ -61,6 +62,10 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 			}
 		}
 	}
+	*/
+
+	/*后台写法
+
 	*/
 	
 });
