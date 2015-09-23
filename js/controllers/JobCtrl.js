@@ -17,18 +17,19 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 		$pid = userDetails.pid;
 		$name = userDetails.name;
 		$ihone = userDetails.ihone;
-		$qq = userDetails.qq;
-		$userEmail = userDetails.userEmail;
-		$wangzhi = userDetails.wangzhi;
+		$qq = userDetails.qq?userDetails.qq:'';
+		$userEmail = userDetails.userEmail?userDetails.userEmail:'';
+		$wangzhi = userDetails.wangzhi?userDetails.wangzhi:'';
 		$jobname = userDetails.jobname;
 		//console.log($name);
+		//本地测试url:'http://192.168.7.157/sunyang/test.php/Weixinajax/userPost',
 		$ionicLoading.show({
 					template: "正在载入数据，请稍后...",
 					duration:6000
 				});
 		$http({
 			method:'post',
-			url:'http://192.168.7.157/sunyang/test.php/Weixinajax/userPost',
+			url:'http://tjd.timehr.com/test.php/Weixinajax/userPost',
 			data:{pid:$pid,name:$name,ihone:$ihone,qq:$qq,userEmail:$userEmail,wangzhi:$wangzhi,jobname:$jobname}
 		}).success(function (req) {
 			console.log(req);
@@ -39,6 +40,7 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
 					template: req['info']
 			}).then(function () {
 				$scope.info = req['info'];
+				$scope.post_status = true;
 			}
 			);
 		}).error(function () {

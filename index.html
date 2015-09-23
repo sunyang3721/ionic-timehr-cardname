@@ -39,13 +39,14 @@
         <div class="content_padding_top">
           <div class="card">
             <div class="item item-text-wrap">
-            <img src="./lib/img/icon/ios/{{user_img.id}}.png" id="avater" />
+            <img src="../Upload/bopai/{{user_img.id}}.png" id="avater" />
             </div>
           </div>
           <ul class="list">
-            <li class="item item-divider">
+           <!-- <li class="item item-divider">
               猎头信息
             </li>
+            -->
             <li class="item">
                <h2>英文名字 : {{user.en_name}}</h2>
             </li>
@@ -60,7 +61,7 @@
             </li>
             <li class="item">
                <h2 style="text-align:center">
-                <img src="./lib/img/icon/ios/{{user_img.user_img}}" />
+                <img src="../Upload/erweima/{{user_img.user_img}}" style="width:80%;" />
                 <p>长按二维码加微信好友</p>
                </h2>
             </li>
@@ -72,7 +73,7 @@
                <div class="row">
                  <div class="col col-75">
                    <h2>{{key.jobtitle}}</h2>
-                   <p>{{key.gongsi}}{{key.id}}</p>
+                   <p>{{key.gongsi}}</p>
                  </div>
                  <div class="col">
                    <b class="moeny">{{key.moeny}}</b>
@@ -84,8 +85,17 @@
             <li class="item item-divider">
               关于腾驹达公司
             </li>
-            <li class="item" style="white-space:normal;">
-              <span>sfd afda f范德萨发达发达发达发达发达发达发对对对对对对</span>
+            <li class="item">
+<p  style="white-space:normal;">
+    &nbsp;&nbsp;&nbsp;&nbsp;腾驹达猎头由人力专家景素奇先生于2003年创建，专注于高端猎头服务13年，始终践行“最值得信赖的猎头”为目标；
+    与万达公司同行十余年,成功为万达猎聘高端职位千余个，猎头机构3万家,腾驹达荣誉全国猎头协会秘书长单位，专注于互联网、金融、地产、电商、商业、制造业等领域；<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;咨询电话：010-62609563<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;加入我们：010-62609527 <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;简历邮箱：zhaopin@timehr.com<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;战略合作：010-82659228-821<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;总部基地：北京市海淀区万泉河路68号紫金大厦12层<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;上海office：021-60525690
+              </p>
             </li>
           </ul>
         </div>
@@ -116,11 +126,14 @@
               <pre>{{jobdata.jobcontent}}</pre>
             </li>
           </ul>
-          <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl">
+          <form novalidate name="userForm" ng-submit="submitForm(newUser)" ng-controller="formCtrl" >
             <input type="hidden" value="" name="pid" ng-model="newUser.pid">
             <input type="hidden" value="" name="jobname" ng-model="newUser.jobname">
             <ul class="list">
-              <li class="item item-divider">人才填表名单 <span class="balanced">{{info}}</span></li>
+                <li class="item item-divider"><span class="balanced">{{info}}</span></li>
+            </ul>
+            <ul class="list" ng-hide="post_status">
+              <li class="item item-divider">人才填表名单</li>
               <label class="item item-input">
                 <input type="text" placeholder="您的人才姓名(必填)" name="name" required ng-model="newUser.name">
               </label>

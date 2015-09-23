@@ -10,10 +10,11 @@ a{text-decoration: none;}
 	text-align:center;
 }
 #avater{
+	width:85%;
 	border:5px solid rgba(255, 0, 0, 0.52);
-	-moz-border-radius: 100px;      /* Gecko browsers */
-    -webkit-border-radius: 100px;   /* Webkit browsers */
-    border-radius:100px;            /* W3C syntax */
+	-moz-border-radius: 300px;      /* Gecko browsers */
+    -webkit-border-radius: 300px;   /* Webkit browsers */
+    border-radius:300px;            /* W3C syntax */
 }
 .content_padding_top .list .item .moeny{
 	color:#ff7f00;
