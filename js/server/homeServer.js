@@ -44,9 +44,14 @@ homeApp.factory('jobFactory',function ($rootScope,$timeout,$ionicLoading,$ionicP
 			})
 		},
 		job_showFactory:function(id) {
+			$ionicLoading.show({
+					template: "正在载入数据，请稍后...",
+					duration:2000
+				});
 			jobService.job_show(id).success(function (data,status,config) {
 				$rootScope.jobdata = data;
 				$rootScope.newUser = {'pid':data['pid'],'jobname':data['jobtitle']};
+				$ionicLoading.hide();
 				//console.log(data);
 			}).error(function () {
 				//错误代码
