@@ -37,6 +37,11 @@ angular.module('timehr', ['ionic','timehr.JobCtrl'])
       controller:"joblistCtrl",
       templateUrl: "joblist.html"
     })
+    .state("weixin", {
+      url:"/weixin",
+      //controller:"joblistCtrl",
+      templateUrl: "weixin.html"
+    })
     
 // $urlRouterProvider.otherwise("/jobs/home");
 });

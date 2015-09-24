@@ -60,10 +60,12 @@
                <h2 style="white-space:normal;">擅长行业 : {{user.hangye}}</h2>
             </li>
             <li class="item">
-               <h2 style="text-align:center">
-                <img src="../Upload/erweima/{{user_img.user_img}}" style="width:95%;" />
-                <p>长按二维码加微信好友</p>
-               </h2>
+              <a href="#/weixin">
+               <div style="text-align:center;margin-top:10px;">
+                <img src="../Upload/erweima/{{user_img.user_img}}" style="width:90%;" />
+              </div>
+              </a>
+                <p style="text-align:center;width:100%;">长按二维码加微信好友</p>
             </li>
             <li class="item item-divider">
               职位信息
@@ -101,6 +103,11 @@
         </div>
       </ion-content>
     </script>
+    
+    <script id="weixin.html" type="text/ng-template">
+      aaaaaaaaaaa
+    </script>
+    
     <script id="joblist.html" type="text/ng-template">
       <ion-content>
         <div class="bar bar-header bar-assertive">
