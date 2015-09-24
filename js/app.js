@@ -39,7 +39,7 @@ angular.module('timehr', ['ionic','timehr.JobCtrl'])
     })
     .state("weixin", {
       url:"/weixin",
-      //controller:"joblistCtrl",
+      controller:"weixinCtrl",
       templateUrl: "weixin.html"
     })
     

@@ -13,7 +13,7 @@
     <link rel=apple-touch-icon href=lib/img/icon/ios/icon-57.png>
     <link rel=apple-touch-icon sizes=72x72 href=lib/img/icon/ios/icon-72.png>
     <link rel=apple-touch-icon sizes=114x114 href=lib/img/icon/ios/icon-114.png>
-    <title>腾驹达官网</title>
+    <title>tjd.timehr.com</title>
 
     <script src="//cdn.bootcss.com/ionic/1.0.1/js/ionic.bundle.min.js"></script>
 
@@ -59,13 +59,11 @@
             <li class="item">
                <h2 style="white-space:normal;">擅长行业 : {{user.hangye}}</h2>
             </li>
-            <li class="item">
-              <a href="#/weixin">
-               <div style="text-align:center;margin-top:10px;">
-                <img src="../Upload/erweima/{{user_img.user_img}}" style="width:90%;" />
-              </div>
-              </a>
-                <p style="text-align:center;width:100%;">长按二维码加微信好友</p>
+            <li class="item item-icon-right">
+               <a href="#/weixin">
+                <h2>加猎头微信的二维码</h2>
+               </a>
+               <i class="icon ion-grid"></i>
             </li>
             <li class="item item-divider">
               职位信息
@@ -103,11 +101,16 @@
         </div>
       </ion-content>
     </script>
-    
     <script id="weixin.html" type="text/ng-template">
-      aaaaaaaaaaa
+      <div class="bar bar-header bar-assertive">
+          <button ng-click="back()" class="button icon ion-ios-arrow-back"> 返回</button>
+          <h1 class="title">扫描二维码</h1>
+        </div>
+      <div style="text-align:center;margin-top:10px;" class="content_padding_top">
+        <img src="../Upload/erweima/{{user_img.user_img}}" style="width:90%;" />
+      </div>
+        <p style="text-align:center;width:100%;">长按二维码加微信好友</p>
     </script>
-    
     <script id="joblist.html" type="text/ng-template">
       <ion-content>
         <div class="bar bar-header bar-assertive">

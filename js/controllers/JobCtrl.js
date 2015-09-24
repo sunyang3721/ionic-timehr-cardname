@@ -11,6 +11,11 @@ angular.module('timehr.JobCtrl', ['timehr.homeServer'])
   //console.log($stateParams.id);
   jobFactory.job_showFactory($stateParams.id);
 })
+.controller('weixinCtrl', function ($scope,$ionicHistory) {
+		$scope.back = function () {
+			$ionicHistory.goBack()
+		}
+})
 .controller('formCtrl', function ($scope,$http,$ionicPopup,$ionicLoading) {
 	$scope.submitForm = function (userDetails) {
 		//ng-model中的属性 获取  不是从name获取
